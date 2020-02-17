@@ -4,7 +4,7 @@ from discord.ext  import commands
 import json
 import nekos
 import random
-
+import os
 def get_prefix(bot, message):
     with open('prefixes.json', 'r') as f:
         prefixes = json.load(f)
@@ -226,4 +226,4 @@ async def gay(ctx):
     embed = discord.Embed(title = None, description=f"{ctx.author} is {random.randint(1, 100)}% gay.")
     await ctx.send(embed=embed)
 
-bot.run('TOKEN');
+bot.run(os.getenv("TOKEN"))
